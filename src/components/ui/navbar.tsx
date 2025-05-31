@@ -76,6 +76,9 @@ export function Navbar() {
             <a href="https://github.com/falkon2/BeautifyOllama/blob/main/README.md" className="text-gray-300 hover:text-white transition-colors duration-200">
               Docs
             </a>
+            <a href="https://ollama.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-200">
+              Ollama
+            </a>
             <a href="https://github.com/falkon2/beautifyOllama" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-200">
               GitHub
             </a>
@@ -144,6 +147,15 @@ export function Navbar() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Docs
+              </a>
+              <a 
+                href="https://ollama.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="block text-gray-300 hover:text-white transition-colors duration-200 py-2 px-2 rounded-lg hover:bg-white/5"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Ollama
               </a>
               <a 
                 href="https://github.com/falkon2/beautifyOllama" 
