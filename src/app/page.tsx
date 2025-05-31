@@ -10,7 +10,7 @@ import { SparklesText } from "@/components/magicui/sparkles-text";
 import { Vortex } from "@/components/ui/vortex";
 import { BentoDemo } from "@/components/ui/bento-demo";
 import { Navbar } from "@/components/ui/navbar";
-import { cn } from "@/lib/utils";
+import { ChevronRight } from "lucide-react";
 
 export default function Home() {
   return (
@@ -100,6 +100,34 @@ export default function Home() {
             </p>
           </div>
           <BentoDemo />
+        </div>
+      </section>
+
+      {/* Other Works Section */}
+      <section className="relative bg-black py-20 px-4 overflow-hidden border-t border-neutral-800/30">
+        <div className="max-w-4xl mx-auto relative z-10 text-center">
+          <div className="mb-8">
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 flex justify-center">
+              <PointerHighlight
+                rectangleClassName="bg-black-100 dark:bg-neutral-700 border-neutral-300 dark:border-neutral-600"
+                pointerClassName="text-yellow-500"
+              >
+                <span className="inline">Check out my other works</span>
+              </PointerHighlight>
+            </h3>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
+              Explore more of my projects and creative endeavors across different technologies and domains.
+            </p>
+            <a 
+              href="https://zahintapadar.onrender.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-yellow-500/10 to-purple-500/10 border border-yellow-500/20 text-white font-semibold rounded-full hover:from-yellow-500/20 hover:to-purple-500/20 hover:border-yellow-500/40 transition-all duration-300 ease-in-out transform hover:scale-105 shadow-lg"
+            >
+              <SparklesText className="inline text-lg">Visit Portfolio</SparklesText>
+              <ChevronRight className="size-5 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
+            </a>
+          </div>
         </div>
       </section>
     </div>
