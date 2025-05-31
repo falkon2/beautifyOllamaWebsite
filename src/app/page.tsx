@@ -1,103 +1,102 @@
-import Image from "next/image";
+"use client";
+import { Spotlight } from "@/components/ui/spotlight";
+import { ContainerScroll } from "@/components/ui/container-scroll-animation";
+import VideoDialog from "@/components/ui/video-dialog";
+import { MorphingText } from "@/components/magicui/morphing-text";
+import { WordRotate } from "@/components/magicui/word-rotate";
+import { PointerHighlight } from "@/components/ui/pointer-highlight";
+import { DotPattern } from "@/components/magicui/dot-pattern";
+import { SparklesText } from "@/components/magicui/sparkles-text";
+import { Vortex } from "@/components/ui/vortex";
+import { BentoDemo } from "@/components/ui/bento-demo";
+import { Navbar } from "@/components/ui/navbar";
+import { cn } from "@/lib/utils";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <div className="bg-black min-h-screen relative">
+      {/* Navbar - Always render immediately */}
+      <Navbar />
+      
+      {/* Background Effects Layer - Server-rendered for better performance */}
+      <div className="fixed inset-0 w-full h-full pointer-events-none z-0">
+        <DotPattern 
+          className="text-neutral-800/20"
+          width={20}
+          height={20}
+          cx={1}
+          cy={1}
+          cr={1}
         />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+        <Vortex
+          className="absolute inset-0 w-full h-full"
+          backgroundColor="transparent"
+          rangeY={800}
+          particleCount={300}
+          baseHue={220}
+        />
+      </div>
+      
+      {/* Spotlight Effect */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none z-10">
+        <Spotlight
+          className="-top-40 left-0 md:-top-20 md:left-60"
+          fill="white"
+        />
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Hero Section with Container Scroll */}
+      <ContainerScroll
+        titleComponent={
+          <div className="flex flex-col items-center space-y-6 px-4 pt-20">
+            <div className="text-6xl md:text-6xl lg:text-7xl font-bold text-white text-center flex flex-wrap justify-center items-center gap-2">
+              <SparklesText className="inline">Beautify</SparklesText>
+              <PointerHighlight rectangleClassName="bg-black-100 dark:bg-neutral-700 border-neutral-300 dark:border-neutral-600" pointerClassName="text-yellow-500">
+                <span className="inline">Ollama</span>
+              </PointerHighlight>
+            </div>
+            <p className="text-lg md:text-xl text-gray-300 max-w-3xl text-center flex flex-wrap justify-center items-center gap-1">
+              Transform your local AI interactions with stunning <WordRotate words={["Interface","UI","Animations"]} />
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 mt-8">
+              <button className="px-8 py-3 md:px-10 md:py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-100 transition-all duration-300 ease-in-out transform hover:scale-105 shadow-lg">
+                Get Started
+              </button>
+              <button className="px-8 py-3 md:px-10 md:py-4 border border-gray-600 text-white font-semibold rounded-full hover:bg-gray-900 hover:border-gray-400 transition-all duration-300 ease-in-out">
+                Learn More
+              </button>
+            </div>
+          </div>
+        }
+      >
+        <VideoDialog
+          videoSrc="https://www.youtube.com/embed/bE4F3rrqY8E?autoplay=1"
+          thumbnailSrc="https://img.youtube.com/vi/bE4F3rrqY8E/maxresdefault.jpg"
+          thumbnailAlt="Ollama Web UI Interface Demo"
+          className="w-full h-full rounded-2xl overflow-hidden"
+          animationStyle="from-center"
+        />
+      </ContainerScroll>
+
+      {/* Features Section */}
+      <section id="features" className="relative bg-black py-20 px-4 overflow-hidden">
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 flex justify-center">
+              <PointerHighlight
+                rectangleClassName="bg-black-100 dark:bg-neutral-700 border-neutral-300 dark:border-neutral-600"
+                pointerClassName="text-yellow-500"
+              >
+                <span className="inline">Powerful Features</span>
+              </PointerHighlight>
+            </h2>
+            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+              Everything you need to create beautiful, functional AI interfaces
+            </p>
+          </div>
+          <BentoDemo />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
     </div>
   );
 }
