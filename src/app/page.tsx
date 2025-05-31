@@ -2,6 +2,7 @@
 import { Spotlight } from "@/components/ui/spotlight";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import VideoDialog from "@/components/ui/video-dialog";
+import { MorphingText } from "@/components/magicui/morphing-text";
 import { WordRotate } from "@/components/magicui/word-rotate";
 import { PointerHighlight } from "@/components/ui/pointer-highlight";
 import { DotPattern } from "@/components/magicui/dot-pattern";
@@ -69,8 +70,8 @@ export default function Home() {
         }
       >
         <VideoDialog
-          videoSrc="https://www.youtube.com/embed/bE4F3rrqY8E?autoplay=1"
-          thumbnailSrc="https://img.youtube.com/vi/bE4F3rrqY8E/maxresdefault.jpg"
+          videoSrc="https://www.youtube.com/embed/cO2X56MxP9A?autoplay=1"
+          thumbnailSrc="https://img.youtube.com/vi/cO2X56MxP9A/maxresdefault.jpg"
           thumbnailAlt="Ollama Web UI Interface Demo"
           className="w-full h-full rounded-2xl overflow-hidden"
           animationStyle="from-center"

@@ -29,5 +29,6 @@ const nextConfig = {
     optimizePackageImports: ['@/components'],
   },
 };
+};
 
 module.exports = nextConfig;
