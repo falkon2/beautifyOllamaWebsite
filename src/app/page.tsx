@@ -59,12 +59,17 @@ export default function Home() {
               Transform your local AI interactions with stunning <WordRotate words={["Interface","UI","Animations"]} />
             </p>
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6 mt-8">
-              <button className="px-8 py-3 md:px-10 md:py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-100 transition-all duration-300 ease-in-out transform hover:scale-105 shadow-lg">
+              <a 
+                href="https://github.com/falkon2/beautifyOllama" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="px-8 py-3 md:px-10 md:py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-100 transition-all duration-300 ease-in-out transform hover:scale-105 shadow-lg text-center"
+              >
                 Get Started
-              </button>
-              <button className="px-8 py-3 md:px-10 md:py-4 border border-gray-600 text-white font-semibold rounded-full hover:bg-gray-900 hover:border-gray-400 transition-all duration-300 ease-in-out">
+              </a>
+              {/* <button className="px-8 py-3 md:px-10 md:py-4 border border-gray-600 text-white font-semibold rounded-full hover:bg-gray-900 hover:border-gray-400 transition-all duration-300 ease-in-out">
                 Learn More
-              </button>
+              </button> */}
             </div>
           </div>
         }
