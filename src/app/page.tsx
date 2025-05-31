@@ -2,7 +2,6 @@
 import { Spotlight } from "@/components/ui/spotlight";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import VideoDialog from "@/components/ui/video-dialog";
-import { MorphingText } from "@/components/magicui/morphing-text";
 import { WordRotate } from "@/components/magicui/word-rotate";
 import { PointerHighlight } from "@/components/ui/pointer-highlight";
 import { DotPattern } from "@/components/magicui/dot-pattern";
