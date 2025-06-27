@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Download, Apple, Monitor } from "lucide-react";
+import { Download, Apple, Monitor, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SparklesText } from "@/components/magicui/sparkles-text";
 import { cn } from "@/lib/utils";
@@ -120,18 +120,18 @@ export const DownloadSection = () => {
           </p>
           <div className="text-neutral-400 text-sm text-center">
             <SparklesText className="inline">
-              Available for macOS and Windows
+              Available for macOS, Windows, and Linux
             </SparklesText>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           <DownloadCard
             title="macOS"
             description="Universal binary supporting both Intel and Apple Silicon Macs"
             icon={Apple}
-            downloadUrl="https://github.com/falkon2/BeautifyOllama/releases/download/v1.6.1/BeautifyOllama_0.1.0_aarch64.dmg"
-            version="1.6"
+            downloadUrl="https://github.com/falkon2/BeautifyOllama/releases/download/v1.6.4/BeautifyOllama_0.1.0_aarch64.dmg"
+            version="1.6.4"
             size="21 MB"
           />
           
@@ -139,16 +139,62 @@ export const DownloadSection = () => {
             title="Windows"
             description="Compatible with Windows 10 and Windows 11 (64-bit)"
             icon={Monitor}
-            downloadUrl="https://github.com/falkon2/BeautifyOllama/releases/download/v1.6.1/BeautifyOllama_0.1.0_x64-setup.exe"
-            version="1.6"
+            downloadUrl="https://github.com/falkon2/BeautifyOllama/releases/download/v1.6.4/BeautifyOllama_0.1.0_x64-setup.exe"
+            version="1.6.4"
             size="18 MB"
           />
+
+          <DownloadCard
+            title="Linux"
+            description="AppImage for universal Linux distribution compatibility"
+            icon={Smartphone}
+            downloadUrl="https://github.com/falkon2/BeautifyOllama/releases/download/v1.6.4/BeautifyOllama_0.1.0_amd64.AppImage"
+            version="1.6.4"
+            size="22 MB"
+          />
+        </div>
+
+        {/* Additional Linux Downloads */}
+        <div className="text-center mt-8">
+          <p className="text-neutral-400 text-sm mb-4">Additional Linux formats:</p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button
+              asChild
+              variant="outline"
+              className="bg-neutral-800/50 border-neutral-600 hover:bg-neutral-700/50 text-white"
+            >
+              <a
+                href="https://github.com/falkon2/BeautifyOllama/releases/download/v1.6.4/BeautifyOllama_0.1.0_amd64.deb"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <Download className="h-4 w-4" />
+                Download .deb (Ubuntu/Debian)
+              </a>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="bg-neutral-800/50 border-neutral-600 hover:bg-neutral-700/50 text-white"
+            >
+              <a
+                href="https://github.com/falkon2/BeautifyOllama/releases/download/v1.6.4/BeautifyOllama_0.1.0_x64_en-US.msi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <Download className="h-4 w-4" />
+                Download .msi (Windows)
+              </a>
+            </Button>
+          </div>
         </div>
 
         {/* Additional info */}
         <div className="text-center mt-12">
           <p className="text-neutral-500 text-sm max-w-2xl mx-auto mb-4">
-            By downloading, you agree to our terms of service. Looking for Linux support? 
+            By downloading, you agree to our terms of service. Need help or have questions? 
             <a 
               href="https://github.com/falkon2/beautifyOllama" 
               target="_blank" 
@@ -160,7 +206,7 @@ export const DownloadSection = () => {
           </p>
           
           {/* macOS Security Notice */}
-          <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-4 max-w-2xl mx-auto">
+          <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-4 max-w-2xl mx-auto mb-4">
             <h4 className="text-yellow-400 font-semibold text-sm mb-2">📋 macOS Users: If you see "DMG is damaged" error</h4>
             <div className="text-xs text-neutral-400 text-left space-y-2">
               <p><strong>First, navigate to your Downloads folder in Terminal:</strong></p>
@@ -169,6 +215,18 @@ export const DownloadSection = () => {
               <p><strong>Alternative methods:</strong></p>
               <p>3. Right-click DMG → "Open With" → "DiskImageMounter"</p>
               <p>4. Go to System Preferences → Security & Privacy → Allow the app</p>
+            </div>
+          </div>
+
+          {/* Linux Installation Notice */}
+          <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4 max-w-2xl mx-auto">
+            <h4 className="text-blue-400 font-semibold text-sm mb-2">🐧 Linux Users: Installation Instructions</h4>
+            <div className="text-xs text-neutral-400 text-left space-y-2">
+              <p><strong>For AppImage:</strong></p>
+              <p>1. Make executable: <code className="bg-black/30 px-1 rounded text-blue-300">chmod +x BeautifyOllama_0.1.0_amd64.AppImage</code></p>
+              <p>2. Run: <code className="bg-black/30 px-1 rounded text-blue-300">./BeautifyOllama_0.1.0_amd64.AppImage</code></p>
+              <p><strong>For .deb package:</strong></p>
+              <p>Install with: <code className="bg-black/30 px-1 rounded text-blue-300">sudo dpkg -i BeautifyOllama_0.1.0_amd64.deb</code></p>
             </div>
           </div>
         </div>
