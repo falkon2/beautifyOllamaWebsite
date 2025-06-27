@@ -139,7 +139,7 @@ export const DownloadSection = () => {
             title="Windows"
             description="Compatible with Windows 10 and Windows 11 (64-bit)"
             icon={Monitor}
-            downloadUrl="https://github.com/falkon2/BeautifyOllama/releases/download/v1.5.7/BeautifyOllama_0.1.0_x64-setup.exe"
+            downloadUrl="https://github.com/falkon2/BeautifyOllama/releases/download/v1.6.1/BeautifyOllama_0.1.0_x64-setup.exe"
             version="1.6"
             size="18 MB"
           />
