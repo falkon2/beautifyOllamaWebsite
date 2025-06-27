@@ -10,6 +10,7 @@ import { SparklesText } from "@/components/magicui/sparkles-text";
 import { Vortex } from "@/components/ui/vortex";
 import { BentoDemo } from "@/components/ui/bento-demo";
 import { Navbar } from "@/components/ui/navbar";
+import { DownloadSection } from "@/components/ui/download-section";
 import { ChevronRight } from "lucide-react";
 
 export default function Home() {
@@ -82,6 +83,9 @@ export default function Home() {
           animationStyle="from-center"
         />
       </ContainerScroll>
+
+      {/* Download Section */}
+      <DownloadSection />
 
       {/* Features Section */}
       <section id="features" className="relative bg-black py-20 px-4 overflow-hidden">
