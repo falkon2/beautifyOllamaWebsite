@@ -147,7 +147,7 @@ export const DownloadSection = () => {
 
         {/* Additional info */}
         <div className="text-center mt-12">
-          <p className="text-neutral-500 text-sm max-w-2xl mx-auto">
+          <p className="text-neutral-500 text-sm max-w-2xl mx-auto mb-4">
             By downloading, you agree to our terms of service. Looking for Linux support? 
             <a 
               href="https://github.com/falkon2/beautifyOllama" 
@@ -158,6 +158,16 @@ export const DownloadSection = () => {
               Check our GitHub repository
             </a>
           </p>
+          
+          {/* macOS Security Notice */}
+          <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-4 max-w-2xl mx-auto">
+            <h4 className="text-yellow-400 font-semibold text-sm mb-2">📋 macOS Users: If you see "DMG is damaged" error</h4>
+            <div className="text-xs text-neutral-400 text-left space-y-1">
+              <p>1. Open Terminal and run: <code className="bg-black/30 px-1 rounded text-yellow-300">sudo xattr -rd com.apple.quarantine /path/to/BeautifyOllama.dmg</code></p>
+              <p>2. Or try: Right-click DMG → "Open With" → "DiskImageMounter"</p>
+              <p>3. Alternative: Go to System Preferences → Security & Privacy → Allow the app</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
