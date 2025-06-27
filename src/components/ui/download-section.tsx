@@ -130,7 +130,7 @@ export const DownloadSection = () => {
             title="macOS"
             description="Universal binary supporting both Intel and Apple Silicon Macs"
             icon={Apple}
-            downloadUrl="https://github.com/falkon2/BeautifyOllama/releases/download/v1.5.7/BeautifyOllama_0.1.0_aarch64.dmg"
+            downloadUrl="https://github.com/falkon2/BeautifyOllama/releases/download/v1.6.1/BeautifyOllama_0.1.0_aarch64.dmg"
             version="1.6"
             size="21 MB"
           />
@@ -162,10 +162,13 @@ export const DownloadSection = () => {
           {/* macOS Security Notice */}
           <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-4 max-w-2xl mx-auto">
             <h4 className="text-yellow-400 font-semibold text-sm mb-2">📋 macOS Users: If you see "DMG is damaged" error</h4>
-            <div className="text-xs text-neutral-400 text-left space-y-1">
-              <p>1. Open Terminal and run: <code className="bg-black/30 px-1 rounded text-yellow-300">sudo xattr -rd com.apple.quarantine /path/to/BeautifyOllama.dmg</code></p>
-              <p>2. Or try: Right-click DMG → "Open With" → "DiskImageMounter"</p>
-              <p>3. Alternative: Go to System Preferences → Security & Privacy → Allow the app</p>
+            <div className="text-xs text-neutral-400 text-left space-y-2">
+              <p><strong>First, navigate to your Downloads folder in Terminal:</strong></p>
+              <p>1. Open Terminal and run: <code className="bg-black/30 px-1 rounded text-yellow-300">cd ~/Downloads</code></p>
+              <p>2. Then run: <code className="bg-black/30 px-1 rounded text-yellow-300">sudo xattr -rd com.apple.quarantine BeautifyOllama_0.1.0_aarch64.dmg</code></p>
+              <p><strong>Alternative methods:</strong></p>
+              <p>3. Right-click DMG → "Open With" → "DiskImageMounter"</p>
+              <p>4. Go to System Preferences → Security & Privacy → Allow the app</p>
             </div>
           </div>
         </div>
