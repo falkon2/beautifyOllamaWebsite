@@ -4,7 +4,6 @@ import { motion } from "motion/react";
 import { Download, Apple, Monitor } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SparklesText } from "@/components/magicui/sparkles-text";
-import { PointerHighlight } from "@/components/ui/pointer-highlight";
 import { cn } from "@/lib/utils";
 
 interface DownloadCardProps {
