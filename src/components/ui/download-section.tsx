@@ -98,7 +98,7 @@ const DownloadCard = ({
 
 export const DownloadSection = () => {
   return (
-    <section className="relative bg-black py-20 px-4 overflow-hidden border-t border-neutral-800/30">
+    <section id="download" className="relative bg-black py-20 px-4 overflow-hidden border-t border-neutral-800/30">
       {/* Background Image */}
       <div 
         className="absolute inset-0 opacity-30 bg-cover bg-center bg-no-repeat"
