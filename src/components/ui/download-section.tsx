@@ -110,19 +110,17 @@ export const DownloadSection = () => {
       
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 flex justify-center">
-            <PointerHighlight
-              rectangleClassName="bg-black-100 dark:bg-neutral-700 border-neutral-300 dark:border-neutral-600"
-              pointerClassName="text-yellow-500"
-            >
-              <span className="inline">Download Now</span>
-            </PointerHighlight>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 text-center">
+            <span className="inline-block relative">
+              Download Now
+              <div className="absolute inset-0 bg-yellow-500/10 border border-yellow-500/20 rounded-lg -m-2 pointer-events-none" />
+            </span>
           </h2>
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
             Get Beautify Ollama for your platform and start creating stunning AI interfaces today
           </p>
-          <div className="inline-block">
-            <SparklesText className="text-neutral-400 text-sm">
+          <div className="text-neutral-400 text-sm text-center">
+            <SparklesText className="inline">
               Available for macOS and Windows
             </SparklesText>
           </div>
