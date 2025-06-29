@@ -167,7 +167,7 @@ export const DownloadSection = () => {
               className="bg-neutral-800/50 border-neutral-600 hover:bg-neutral-700/50 text-white"
             >
               <a
-                href="https://github.com/falkon2/BeautifyOllama/releases/download/v1.6.4/BeautifyOllama_0.1.0_amd64.deb"
+                href="https://github.com/falkon2/BeautifyOllama/releases/download/v1.6.9/BeautifyOllama_0.1.0_amd64.deb"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2"
@@ -182,7 +182,7 @@ export const DownloadSection = () => {
               className="bg-neutral-800/50 border-neutral-600 hover:bg-neutral-700/50 text-white"
             >
               <a
-                href="https://github.com/falkon2/BeautifyOllama/releases/download/v1.6.4/BeautifyOllama_0.1.0_x64_en-US.msi"
+                href="https://github.com/falkon2/BeautifyOllama/releases/download/v1.6.9/BeautifyOllama_0.1.0_x64_en-US.msi"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2"
