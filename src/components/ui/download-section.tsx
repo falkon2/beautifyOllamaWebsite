@@ -298,7 +298,7 @@ export const DownloadSection = () => {
             <div className="text-xs text-neutral-400 text-left space-y-2">
               <p><strong>First, navigate to your Downloads folder in Terminal:</strong></p>
               <p>1. Open Terminal and run: <code className="bg-black/30 px-1 rounded text-yellow-300">cd ~/Downloads</code></p>
-              <p>2. Then run: <code className="bg-black/30 px-1 rounded text-yellow-300">sudo xattr -rd com.apple.quarantine BeautifyOllama_0.1.0_aarch64.dmg</code></p>
+              <p>2. Then run: <code className="bg-black/30 px-1 rounded text-yellow-300">sudo xattr -rd com.apple.quarantine BeautifyOllama_0.1.0_universal.dmg</code></p>
               <p><strong>Alternative methods:</strong></p>
               <p>3. Right-click DMG → "Open With" → "DiskImageMounter"</p>
               <p>4. Go to System Preferences → Security & Privacy → Allow the app</p>
