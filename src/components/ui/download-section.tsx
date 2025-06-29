@@ -133,7 +133,7 @@ export const DownloadSection = () => {
             title="macOS"
             description="Universal binary supporting both Intel and Apple Silicon Macs"
             icon={Apple}
-            downloadUrl="https://github.com/falkon2/BeautifyOllama/releases/download/v1.6.4/BeautifyOllama_0.1.0_aarch64.dmg"
+            downloadUrl="https://github.com/falkon2/BeautifyOllama/releases/download/v1.6.9/BeautifyOllama_0.1.0_universal.dmg"
             version="1.6.9"
             size="21 MB"
           />
@@ -142,7 +142,7 @@ export const DownloadSection = () => {
             title="Windows"
             description="Compatible with Windows 10 and Windows 11 (64-bit)"
             icon={Monitor}
-            downloadUrl="https://github.com/falkon2/BeautifyOllama/releases/download/v1.6.4/BeautifyOllama_0.1.0_x64-setup.exe"
+            downloadUrl="https://github.com/falkon2/BeautifyOllama/releases/download/v1.6.9/BeautifyOllama_0.1.0_x64-setup.exe"
             version="1.6.9"
             size="18 MB"
           />
@@ -151,7 +151,7 @@ export const DownloadSection = () => {
             title="Linux"
             description="AppImage for universal Linux distribution compatibility"
             icon={Smartphone}
-            downloadUrl="https://github.com/falkon2/BeautifyOllama/releases/download/v1.6.4/BeautifyOllama_0.1.0_amd64.AppImage"
+            downloadUrl="https://github.com/falkon2/BeautifyOllama/releases/download/v1.6.9/BeautifyOllama_0.1.0_amd64.AppImage"
             version="1.6.9"
             size="22 MB"
           />
