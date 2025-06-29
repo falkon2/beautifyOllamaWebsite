@@ -1,10 +1,11 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Download, Apple, Monitor, Smartphone } from "lucide-react";
+import { Download, Apple, Monitor, Smartphone, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SparklesText } from "@/components/magicui/sparkles-text";
 import { cn } from "@/lib/utils";
+import { useState } from "react";
 
 interface DownloadCardProps {
   title: string;
@@ -97,6 +98,8 @@ const DownloadCard = ({
 };
 
 export const DownloadSection = () => {
+  const [showPreviousVersions, setShowPreviousVersions] = useState(false);
+
   return (
     <section id="download" className="relative bg-black py-20 px-4 overflow-hidden border-t border-neutral-800/30">
       {/* Background Image */}
@@ -131,7 +134,7 @@ export const DownloadSection = () => {
             description="Universal binary supporting both Intel and Apple Silicon Macs"
             icon={Apple}
             downloadUrl="https://github.com/falkon2/BeautifyOllama/releases/download/v1.6.4/BeautifyOllama_0.1.0_aarch64.dmg"
-            version="1.6.4"
+            version="1.6.9"
             size="21 MB"
           />
           
@@ -140,7 +143,7 @@ export const DownloadSection = () => {
             description="Compatible with Windows 10 and Windows 11 (64-bit)"
             icon={Monitor}
             downloadUrl="https://github.com/falkon2/BeautifyOllama/releases/download/v1.6.4/BeautifyOllama_0.1.0_x64-setup.exe"
-            version="1.6.4"
+            version="1.6.9"
             size="18 MB"
           />
 
@@ -149,14 +152,14 @@ export const DownloadSection = () => {
             description="AppImage for universal Linux distribution compatibility"
             icon={Smartphone}
             downloadUrl="https://github.com/falkon2/BeautifyOllama/releases/download/v1.6.4/BeautifyOllama_0.1.0_amd64.AppImage"
-            version="1.6.4"
+            version="1.6.9"
             size="22 MB"
           />
         </div>
 
         {/* Additional Linux Downloads */}
         <div className="text-center mt-8">
-          <p className="text-neutral-400 text-sm mb-4">Additional Linux formats:</p>
+          <p className="text-neutral-400 text-sm mb-4">Additional formats:</p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
               asChild
@@ -189,6 +192,90 @@ export const DownloadSection = () => {
               </a>
             </Button>
           </div>
+        </div>
+
+        {/* Previous Versions Section */}
+        <div className="mt-16 border-t border-neutral-800/50 pt-12">
+          <div className="text-center mb-8">
+            <Button
+              onClick={() => setShowPreviousVersions(!showPreviousVersions)}
+              variant="outline"
+              className="bg-neutral-800/50 border-neutral-600 hover:bg-neutral-700/50 text-white mb-4"
+            >
+              <span className="flex items-center gap-2">
+                {showPreviousVersions ? (
+                  <>
+                    Hide Previous Versions
+                    <ChevronUp className="h-4 w-4" />
+                  </>
+                ) : (
+                  <>
+                    Show Previous Versions (15 releases)
+                    <ChevronDown className="h-4 w-4" />
+                  </>
+                )}
+              </span>
+            </Button>
+            <p className="text-neutral-400 text-sm">
+              Download older releases for compatibility or testing purposes
+            </p>
+          </div>
+
+          {showPreviousVersions && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="overflow-hidden"
+            >
+              <div className="space-y-3 max-h-96 overflow-y-auto pr-2 scrollbar-thin scrollbar-track-neutral-800 scrollbar-thumb-neutral-600">
+                {/* Version List */}
+                {[
+                  { version: "1.6.8", date: "June 2025" },
+                  { version: "1.6.6.1", date: "June 2025" },
+                  { version: "1.6.6", date: "June 2025" },
+                  { version: "1.6.4", date: "June 2025" },
+                  { version: "1.6.3", date: "June 2025" },
+                  { version: "1.6.2", date: "June 2025" },
+                  { version: "1.6.1", date: "June 2025" },
+                  { version: "1.6", date: "June 2025" },
+                  { version: "1.5.7", date: "May 2025" },
+                  { version: "1.5.6", date: "May 2025" },
+                  { version: "1.5.5", date: "May 2025" },
+                  { version: "1.5.4", date: "May 2025" },
+                  { version: "1.5.2", date: "May 2025" },
+                  { version: "1.5.0", date: "April 2025" },
+                  { version: "1.0.0", date: "March 2025" }
+                ].map((release) => (
+                  <div key={release.version} className="bg-neutral-900/30 rounded-xl p-4 border border-neutral-800/50">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between">
+                      <div className="mb-3 sm:mb-0">
+                        <h4 className="text-sm font-semibold text-white">Version {release.version}</h4>
+                        <p className="text-neutral-400 text-xs">Released: {release.date}</p>
+                      </div>
+                      <Button
+                        asChild
+                        variant="outline"
+                        size="sm"
+                        className="bg-neutral-800/30 border-neutral-700 hover:bg-neutral-700/30 text-white text-xs h-8 px-4"
+                      >
+                        <a
+                          href={`https://github.com/falkon2/BeautifyOllama/releases/tag/v${release.version}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2"
+                        >
+                          <Download className="h-3 w-3" />
+                          Download v{release.version}
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          )}
         </div>
 
         {/* Additional info */}
